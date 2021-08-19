@@ -12,13 +12,13 @@ function ListItems() {
       <ul className={classes.ul}>
         <Link to="/">
           <li>
-            {" "}
+           
             <img src={mail} alt="mail" /> Inbox
           </li>
         </Link>
         <Link to="/starred">
           <li>
-            {" "}
+            
             <img src={star} alt="mail" /> Starred
           </li>
         </Link>
