@@ -1,0 +1,28 @@
+.navigate {
+  display: flex;
+  margin-top: 15px;
+}
+.navigate > svg {
+  margin-right: 30px;
+}
+
+.navigate > button {
+  background: none;
+  border: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.sender {
+  margin-top: 3vh;
+  float: left;
+}
+.subject {
+  margin-top: 4vh;
+}
+.description {
+  margin-top: 10vh;
+}
+.label {
+  margin-top: 25px;
+  margin-left: 15px;
+}

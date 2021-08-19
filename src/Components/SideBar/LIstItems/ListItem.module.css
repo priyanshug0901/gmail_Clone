@@ -1,0 +1,26 @@
+.ul {
+  list-style: none;
+  padding: 0;
+}
+.ul > li {
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-weight: bold;
+}
+
+.ul > li:hover {
+  background-color: #f1f3f4;
+}
+
+.ul > li > img {
+  width: 16px;
+  margin-right: 25px;
+}
+.listItem {
+  margin-top: 20px;
+  padding: 5px 10px;
+  padding-left: 0;
+}

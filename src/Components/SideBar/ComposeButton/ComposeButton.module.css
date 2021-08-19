@@ -1,0 +1,21 @@
+.compose {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+  border-radius: 40px;
+  background: none;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  /* justify-content: center; */
+}
+
+.compose > span {
+  font-size: 40px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.compose > h4 {
+  margin: 0px 10px;
+}

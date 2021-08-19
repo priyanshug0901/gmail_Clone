@@ -1,0 +1,22 @@
+.form {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+}
+.form > input {
+  padding: 7px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.description {
+  min-height: 30vh;
+  overflow-y: auto;
+}
+.form > button {
+  margin-top: 10px;
+}

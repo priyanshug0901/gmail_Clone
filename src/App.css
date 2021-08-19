@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 296px 1fr;
+}
+hr {
+  border-top: 1px solid #f1f1f1;
+}

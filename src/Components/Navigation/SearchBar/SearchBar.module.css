@@ -1,0 +1,26 @@
+.search {
+  display: flex;
+  padding: 5px;
+  background: #f1f3f4;
+  border: none;
+  border-radius: 8px;
+  /* width: 100%; */
+}
+
+.searchIcon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.input {
+  /* padding: 5px; */
+  display: block;
+  border: none;
+  width: 100%;
+}
+
+.form {
+  width: 50%;
+  flex-grow: 1;
+  margin-right: 150px;
+}
