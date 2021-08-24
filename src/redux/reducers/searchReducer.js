@@ -15,7 +15,7 @@ const searchReducer = (state = gmailData, action) => {
       return filterDetails;
 
     case "EMPTY":
-      return state;
+      return [...state];
 
     case "deleteMail":
       let mailid = action.id;
