@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import Pagination from "../Pagination/Pagination";
 import classes from "./Starred.module.css";
+
 
 function Starred() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,6 +22,8 @@ function Starred() {
   const starredId = useSelector((state) => state.starredReducer);
   const starredData = email.filter((val) => starredId.includes(val.id));
 
+//   let location = useLocation();
+// console.log("location  ",location.pathname);
   // let starredData = [];
   // starredId.forEach((element) => {
   //   starredData.push(
@@ -29,10 +33,10 @@ function Starred() {
   //   );
   // });
 
-  console.log(starredData);
+  // console.log(starredData);
   return (
     <div>
-      <Pagination data={starredData} dataLimit={50} currentPage={currentPage} />
+      <Pagination data={starredData} dataLimit={50} currentPage={currentPage} path="/starred" />
     </div>
   );
 }

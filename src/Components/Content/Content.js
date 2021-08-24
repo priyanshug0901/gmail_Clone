@@ -30,7 +30,7 @@ function Content() {
   return (
     <PageContext.Provider value={obj}>
       <div className={classes.container}>
-        <MailBox />
+        
 
         <Switch>
           <Route path="/mail">
@@ -69,8 +69,9 @@ function Content() {
             <div>
               <Pagination
                 data={email}
-                dataLimit={50}
+                dataLimit={12}
                 currentPage={currentPage}
+                path="/"
               />
             </div>
           </Route>

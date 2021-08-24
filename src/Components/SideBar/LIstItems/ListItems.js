@@ -1,43 +1,64 @@
 import React from "react";
 import classes from "./ListItem.module.css";
-import mail from "../Images/mail-inbox-app.png";
-import star from "../Images/pointed-star.png";
-import snooze from "../Images/snooze.png";
-import sent from "../Images/right-arrow.png";
-import draft from "../Images/notes.png";
 import { Link } from "react-router-dom";
+import { GrStar } from "react-icons/gr";
+import { BiAlarmSnooze, BiSend } from "react-icons/bi";
+import { RiDraftLine } from "react-icons/ri";
+import { HiOutlineMail } from "react-icons/hi";
+import { useState } from "react";
+
+
+
+
+
+
 function ListItems() {
+
+  const [color,setColor]=useState("black");
+  const [fill,setFill]=useState("white");
+  function handleClick(){
+    setColor("red");
+    setFill("red");
+  }
+  function handleClickOutside(){
+    setColor("black");
+    setFill("white");
+  }
+
+
   return (
     <div className={classes.listItem}>
       <ul className={classes.ul}>
-        <Link to="/">
-          <li>
-           
-            <img src={mail} alt="mail" /> Inbox
+        
+        <Link className={classes.sidebarContainer} to="/">
+
+          <li className={classes.li} style={{color:color}} onClick={handleClick}>
+           <HiOutlineMail style={{fill:fill}} onClick={handleClick} className={classes.svg} />Inbox
+          </li>
+
+        </Link>
+
+        <Link onClick={handleClickOutside} className={classes.sidebarContainer} to="/starred">
+          <li className={classes.li}>
+            <GrStar className={classes.svg}/>Starred
           </li>
         </Link>
-        <Link to="/starred">
-          <li>
-            
-            <img src={star} alt="mail" /> Starred
+
+        <Link onClick={handleClickOutside} className={classes.sidebarContainer} to="/snoozed">
+          <li className={classes.li}>
+            <BiAlarmSnooze className={classes.svg}/>Snoozed
           </li>
         </Link>
-        <Link to="/snoozed">
-          <li>
-            {" "}
-            <img src={snooze} alt="mail" /> Snoozed
+
+        <Link onClick={handleClickOutside} className={classes.sidebarContainer} to="/sent">
+          <li className={classes.li}>
+            <BiSend className={classes.svg}/>Sent
           </li>
         </Link>
-        <Link to="/sent">
-          <li>
-            {" "}
-            <img src={sent} alt="mail" /> Sent
-          </li>
-        </Link>
-        <Link to="/drafts">
-          <li>
-            {" "}
-            <img src={draft} alt="mail" /> Drafts
+
+        <Link onClick={handleClickOutside} className={classes.sidebarContainer} to="/drafts">
+          <li className={classes.li}>
+            <RiDraftLine className={classes.svg}/> Drafts
           </li>
         </Link>
       </ul>

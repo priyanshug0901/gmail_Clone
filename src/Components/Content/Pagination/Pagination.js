@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Email from "../Emails/Email";
 import { useSelector } from "react-redux";
 
-function Pagination({ data, dataLimit, currentPage }) {
+function Pagination({ data, dataLimit, currentPage,path }) {
   // const page = Math.round(data.length / dataLimit);
   const getPaginatedData = () => {
     const startIndex = currentPage * dataLimit - dataLimit;
@@ -23,6 +23,7 @@ function Pagination({ data, dataLimit, currentPage }) {
             description={d.description}
             subject={d.subject}
             time={d.time}
+            path={path}
           />
         );
       })}

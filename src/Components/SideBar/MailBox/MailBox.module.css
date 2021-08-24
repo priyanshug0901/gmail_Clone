@@ -1,22 +1,87 @@
 .form {
-  position: absolute;
+  width: 30vw;
+  position: fixed;
   right: 0;
   bottom: 0;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  padding: 20px;
+  z-index: 1;
+  /* display: flex;
+  flex-direction: column; */
+  background: grey;
+  /* padding: 20px; */
+  /* width: fit-content; */
+  border: 3px solid rgb(42, 148, 0);
+  box-shadow: -2px -2px 3px 1px rgba(55, 194, 0, 0.561);
+
 }
-.form > input {
+.formArea{
+    padding: 20px;
+    padding-bottom: 5px;
+
+}
+ .formItems {
+   width: 80%;
+   display: block;
   padding: 7px;
   margin-top: 10px;
   margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.616);
+  border: none;
+
+  outline:2px solid green;
+ 
+  font-weight: bolder;
+  font-size: large;
+  }
+  .formButton{
+    width: 100%;
+    display: block;
+    padding: 7px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.616);
+  outline:2px solid green;
+  font-weight: bolder;
+  font-size: large;
 }
+.formButton:hover{
+background-color:#1bb8305d;
+font-size: larger;
+color: green;
+font-weight: bolder;
+
+;
+}
+
+.textArea{
+  display: block;
+  width:100%;
+  font-size: large;
+  resize: none;
+  height: 200px;
+  min-height:2em;
+  overflow-y:auto;
+  background-color: rgba(255, 255, 255, 0.616);
+
+  outline:2px solid green;
+
+}
+/*
 .description {
   min-height: 30vh;
   overflow-y: auto;
 }
 .form > button {
   margin-top: 10px;
+} */
+
+.mailBoxHeader{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(63, 179, 63, 0.63);
 }

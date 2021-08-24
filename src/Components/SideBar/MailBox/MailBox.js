@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { send } from "../../../redux/action/send";
+import ClearIcon from '@material-ui/icons/Clear';
 
 import classes from "./MailBox.module.css";
-function MailBox() {
+function MailBox({hide}) {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -25,23 +26,30 @@ function MailBox() {
     dispatch(send(id, email, subject, textBox, time));
   };
 
-  return (
-    <form className={classes.form} onSubmit={submitHandler}>
+  return (<div className={classes.form}>
+    <header className={classes.mailBoxHeader}>
+      <h2>New Message</h2>
+      <ClearIcon onClick={hide}/>
+    </header>
+    <form className={classes.formArea} onSubmit={submitHandler}>
       <input
+       className={classes.formItems}
         onChange={sendersHandler}
         type="text"
         value={email}
         placeholder="To :"
       />
-      <input onChange={subjectHandler} type="text" placeholder="Subject " />
+      <input className={classes.formItems} onChange={subjectHandler} type="text" placeholder="Subject " />
       <textarea
+      className={classes.textArea}
         onChange={textBoxHandler}
-        className={classes.description}
+        // className={classes.description}
         type="textbox"
         placeholder="Description "
       />
-      <button onClick={submitHandler}>Send</button>
+      <button className={classes.formButton} onClick={submitHandler}>Send</button>
     </form>
+    </div>
   );
 }
 

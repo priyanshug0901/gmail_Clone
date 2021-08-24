@@ -1,6 +1,6 @@
 .search {
   display: flex;
-  padding: 5px;
+  padding: 10px;
   background: #f1f3f4;
   border: none;
   border-radius: 8px;
@@ -17,6 +17,10 @@
   display: block;
   border: none;
   width: 100%;
+  outline: none;
+  font-size: large;
+  background: #f1f3f4;
+  
 }
 
 .form {
@@ -24,3 +28,4 @@
   flex-grow: 1;
   margin-right: 150px;
 }
+

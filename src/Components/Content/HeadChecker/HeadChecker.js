@@ -14,7 +14,8 @@ import LabelIcon from "@material-ui/icons/Label";
 import CreateNewFolderIcon from "@material-ui/icons/CreateNewFolder";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteMultiple } from "../../../redux/action/search";
@@ -73,15 +74,14 @@ function HeadChecker() {
           type="checkbox"
           onClick={showIcons}
         />
-        {checked}
+        <div>{checked}</div>
       </div>
       <div className={classes.headchecker}>
         <button onClick={obj.goToPreviousPage}>
-          <img src={left} alt="left" />
+          <ArrowBackIosIcon className={classes.headSvg}/>
         </button>
         <button onClick={obj.goToNextPage}>
-          {" "}
-          <img src={right} alt="right" />
+         <ArrowForwardIosIcon className={classes.headSvg}/>
         </button>
       </div>
     </div>

@@ -10,7 +10,7 @@ function Snooze() {
 
   return (
     <div>
-      <Pagination data={snoozedData} dataLimit={50} currentPage={1} />
+      <Pagination data={snoozedData} dataLimit={50} currentPage={1} path="/snoozed" />
     </div>
   );
 }

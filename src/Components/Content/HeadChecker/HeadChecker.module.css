@@ -9,10 +9,11 @@
   background: none;
   border: none;
   margin: 0px 10px;
-  border-radius: 50%;
+  border-radius: 100px;
+  color: green;
 }
 .headchecker > button:hover {
-  background: #f1f3f4;
+  background: rgba(16, 148, 16, 0.37);
 }
 
 .headchecker > button > img {
@@ -36,9 +37,9 @@
 
 .headchecker {
   display: flex;
-  /* justify-content: center;
-  align-content: center; */
+  justify-content: center;
+  align-content: center;
 }
 .headchecker > input {
-  align-items: center;
+  /* align-items: center; */
 }

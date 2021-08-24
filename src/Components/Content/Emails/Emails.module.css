@@ -1,21 +1,37 @@
+.list {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
 .list:hover {
-  box-shadow: 5px 5px 10px 5px rgb(226 232 236 / 50%);
+  background-color: #23af368c;
+  border: 3px solid rgb(42, 148, 0);
+  box-shadow: px 2px 5px 2px rgba(55, 194, 0, 0.561);
+  color: green;
+  font-weight: bolder;
 }
+
 .svg {
-  width: 1.3em;
-  height: 1.3em;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
 }
+
 .svgStar {
   fill: red;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
 }
+
 .check {
   display: flex;
   align-items: center;
+  padding-left: 10px;
+  box-sizing: border-box;
 }
-.list {
-  display: flex;
-  align-items: center;
-}
+
 .company {
   display: flex;
   justify-content: space-between;
@@ -35,27 +51,30 @@
   padding-right: 10px;
 }
 .hideIcons > button {
-  /* margin-right: 0px; */
   cursor: pointer;
   background: none;
   border: none;
   width: 30px;
-  padding: 0;
+  margin-right: 20px; 
 }
 .button {
   margin-left: 10px;
   background: none;
   border: none;
+
 }
 .button:hover {
-  background: #f1f3f4;
+  background:inherit;
 }
-/* .hideIcons {
-  background: red;
-} */
-.hideIcons > button :hover {
-  background: #f1f3f4;
+
+
+
+.btnLeft{
+  width: 30px;
+  height: 25px;
+
 }
+
 
 .middle {
   display: flex;
@@ -67,3 +86,4 @@
 .middle > h4 {
   margin-left: 100px;
 }
+

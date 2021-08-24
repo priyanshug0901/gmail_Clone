@@ -8,9 +8,10 @@ const sentReducer = (state = [], action) => {
         body: action.description,
         time: action.time,
       };
-      console.log(mail);
-      state.push(mail);
-      return state;
+     
+      let newState=[...state,mail];
+      return newState;
+
     default:
       return state;
   }

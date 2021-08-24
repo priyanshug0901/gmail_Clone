@@ -6,7 +6,7 @@ import { BiAlarmSnooze } from "react-icons/bi";
 import classes from "./Emails.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addInToSnooze, removeIntoSnooze } from "../../../redux/action/snooze";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import {
   addIdIntoStarred,
   removeIdIntoStarred
@@ -18,8 +18,11 @@ import {
   addToSelected,
   remFromSelected
 } from "../../../redux/action/mailSelectAct";
+import { blue } from "@material-ui/core/colors";
 
-function Email({ id, company, description, subject, time }) {
+
+
+function Email({ id, company, description, subject, time, path }) {
   const history = useHistory();
   const [showOnHover, setShowOnHover] = useState(false);
   const [starColorShow, setStarColorShow] = useState(false);
@@ -28,27 +31,37 @@ function Email({ id, company, description, subject, time }) {
 
   const handlingShowOnOver = (e) => {
     e.stopPropagation();
-    setShowOnHover((prev) => (prev = true));
+    setShowOnHover(true);
   };
 
   const handlingShowOnOut = (e) => {
     e.stopPropagation();
-    setShowOnHover((prev) => (prev = false));
+    setShowOnHover(false);
   };
-
+  
   const starClick = (e) => {
     e.preventDefault();
     setStarColorShow((prev) => !prev);
-    if (!starColorShow) {
-      dispatch(addIdIntoStarred(id));
-    } else if (starColorShow) {
+   
+
+    if(path==="/starred"){
       dispatch(removeIdIntoStarred(id));
     }
+   else if (!starColorShow) {
+      dispatch(addIdIntoStarred(id));
+    }
+     else if (starColorShow) {
+      dispatch(removeIdIntoStarred(id));
+    }
+    
   };
 
   const snoozeHandler = (e) => {
     setAddSnooze(!addSnooze);
-    if (!addSnooze) {
+    if(path==="/snoozed"){
+      dispatch(removeIntoSnooze(id));
+    }
+    else if (!addSnooze) {
       console.log("run");
       dispatch(addInToSnooze(id));
     } else if (addSnooze) {
@@ -77,40 +90,47 @@ function Email({ id, company, description, subject, time }) {
   return (
     <React.Fragment>
       <div
-        // onMouseIn={handlingShowOnOver}
+        
+        onMouseEnter={handlingShowOnOver}
+        onMouseLeave={handlingShowOnOut}
         onMouseOver={handlingShowOnOver}
-        onMouseOut={handlingShowOnOut}
         className={classes.list}
       >
         <div className={classes.check}>
-          <input type="checkbox" onClick={selectBox} />
+         
+          <input className={classes.chkBox}  type="checkbox" onClick={selectBox} />
           <button type="button" className={classes.button} onClick={starClick}>
             <AiOutlineStar
-              className={starColorShow ? classes.svgStar : classes.svg}
+              className={ (starColorShow || path==="/starred" ) ? classes.svgStar : classes.svg}
             />
           </button>
           <button className={classes.button}>
             <BiMailSend className={classes.svg} />
           </button>
+       
         </div>
         <div className={classes.company}>
           <div className={classes.middle} onClick={showMail}>
             <h3>{company}</h3>
             <h4>{description}</h4>
           </div>
-          {showOnHover ? (
-            <div className={classes.hideIcons}>
-              <button>
-                <IoMdMailUnread />
+          {showOnHover && (
+            <div   
+            // onMouseOver={handlingShowOnOver}
+            // onMouseOut={handlingShowOnOut} 
+            className={classes.hideIcons}>
+              <button >
+                <IoMdMailUnread  className={classes.btnLeft} />
               </button>
-              <button onClick={snoozeHandler}>
-                <AccessAlarmIcon />
+              <button onClick={snoozeHandler}  >
+                <AccessAlarmIcon className={classes.btnLeft} />
               </button>
-              <button onClick={handleDelete}>
-                <AiFillDelete />
+              <button onClick={handleDelete}  >
+                <AiFillDelete className={classes.btnLeft} />
               </button>
             </div>
-          ) : (
+          ) }
+          { !showOnHover && (
             <p>{time}</p>
           )}
         </div>
