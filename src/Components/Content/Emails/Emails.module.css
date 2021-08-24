@@ -77,8 +77,9 @@
 
 
 .middle {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+ grid-template-columns: 135px auto;
+  
 }
 .middle > h3 {
   margin-left: 40px;
